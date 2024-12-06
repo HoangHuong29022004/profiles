@@ -42,3 +42,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 mix-manifest.json
+
+.env
+.env.*
+yarn-debug.log*
+yarn-error.log*
