@@ -7,22 +7,28 @@
     "dev": "mix",
     "watch": "mix watch",
     "prod": "mix --production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "mix watch & browser-sync start --server --files 'assets/css/*.css, assets/js/*.js, *.html'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hoang Huong <huong.ph@fsofts.com>",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.x",
+    "browser-sync": "^2.x.x",
+    "browser-sync-webpack-plugin": "^2.x.x",
     "laravel-mix": "^6.0.x",
     "postcss": "^8.4.x",
     "sass": "^1.x.x",
-    "sass-loader": "^12.x.x",
-    "commander": "^x.x.x"
+    "sass-loader": "^12.x.x"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.1",
     "@popperjs/core": "^2.x.x",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
     "bootstrap": "^5.x.x",
-    "jquery": "^3.x.x"
-  }
+    "jquery": "^3.x.x",
+    "typed.js": "^2.1.0"
+  },
+  "repository": "git@github.com:HoangHuong29022004/profiles.git"
 }

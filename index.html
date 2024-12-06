@@ -3,51 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Site Title</title>
+    <title>Phạm Hoàng Hương - Profile</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
 </head>
 <body>
     <!-- Header/Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">Your Brand</a>
+            <a class="navbar-brand" href="/">PHH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact.html">Contact</a>
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container my-4">
-        <h1>Welcome to My Site</h1>
-        <p>This is the homepage content.</p>
-    </main>
+    <!-- Hero Section -->
+    <section class="hero min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 animate__animated animate__fadeInDown">Phạm Hoàng Hương</h1>
+                    <p class="lead mb-4 animate__animated animate__fadeInUp">
+                        <span id="typed"></span>
+                    </p>
+                    <div class="animate__animated animate__fadeInUp animate__delay-1s">
+                        <a href="#about" class="btn btn-primary me-2">About Me</a>
+                        <a href="#contact" class="btn btn-outline-primary">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="assets/images/profile.jpg" alt="Profile" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3>Backend Web Developer</h3>
+                    <p class="lead">Sinh ngày: 29/02/2004</p>
+                    <p>Hiện đang là sinh viên tại FPT Polytechnic (2022), chuyên ngành lập trình web Backend.</p>
+                    <p>Từng thực tập tại FPT Shop, có kinh nghiệm làm việc với các công nghệ web hiện đại.</p>
+                    <div class="mt-4">
+                        <h4>Sở thích:</h4>
+                        <ul>
+                            <li>Coding</li>
+                            <li>Thể thao</li>
+                            <li>Học công nghệ mới</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Skills</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-code"></i> Backend</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="fab fa-php"></i> PHP</li>
+                                <li><i class="fab fa-laravel"></i> Laravel</li>
+                                <li><i class="fab fa-wordpress"></i> WordPress</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-paint-brush"></i> Frontend</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="fab fa-html5"></i> HTML5</li>
+                                <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                                <li><i class="fab fa-js"></i> JavaScript</li>
+                                <li><i class="fab fa-react"></i> React</li>
+                                <li><i class="fab fa-vuejs"></i> Vue.js</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-tools"></i> Tools & Others</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="fab fa-git-alt"></i> Git</li>
+                                <li><i class="fas fa-database"></i> MySQL</li>
+                                <li><i class="fab fa-docker"></i> Docker</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Projects</h2>
+            <!-- Add your projects here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <a href="https://github.com/yourusername" class="me-3 text-dark">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/yourusername" class="me-3 text-dark">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="mailto:your.email@example.com" class="text-dark">
+                                <i class="fas fa-envelope fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer py-4 bg-dark text-white">
         <div class="container text-center">
-            <span class="text-muted">© 2024 Your Site. All rights reserved.</span>
+            <span>&copy; 2024 Phạm Hoàng Hương. All rights reserved.</span>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/typed.js/lib/typed.min.js"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html> 
