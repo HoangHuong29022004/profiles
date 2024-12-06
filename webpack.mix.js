@@ -13,10 +13,12 @@ mix.js('src/js/app.js', 'js')
    .sourceMaps()
    .version();
 
+// Copy các file từ node_modules
 mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'assets/js')
-   .copy('node_modules/jquery/dist/jquery.min.js', 'assets/js');
+   .copy('node_modules/jquery/dist/jquery.min.js', 'assets/js')
+   .copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'assets/webfonts');
 
-// Add BrowserSync
+// Browser Sync
 mix.browserSync({
     proxy: false,
     server: {

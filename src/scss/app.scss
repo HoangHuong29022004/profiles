@@ -4,31 +4,74 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-// Custom components
-@import "components/header";
-@import "components/footer";
-@import "components/buttons";
-
 // Custom styles
+:root {
+  --primary-color: #2d3436;
+  --secondary-color: #0984e3;
+  --accent-color: #00cec9;
+  --text-color: #2d3436;
+  --light-bg: #f5f6fa;
+}
+
+// Global Animations
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px var(--accent-color); }
+  50% { box-shadow: 0 0 20px var(--accent-color); }
+  100% { box-shadow: 0 0 5px var(--accent-color); }
+}
+
+// General Styles
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding-top: 80px;
-}
-
+// Navbar Styles
 .navbar {
-    transition: all 0.3s;
-    &.scrolled {
-        background: white !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease;
+  
+  &.scrolled {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-link {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: var(--secondary-color);
+      transition: all 0.3s ease;
     }
+
+    &:hover::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  position: relative;
+  background: linear-gradient(45deg, #000850 0%, #000320 100%), radial-gradient(100% 225% at 100% 0%, #FF6928 0%, #000000 100%), linear-gradient(225deg, #FF7A00 0%, #000000 100%), linear-gradient(135deg, #CDFFEB 10%, #CDFFEB 35%, #009F9D 35%, #009F9D 60%, #000000 60%, #000000 100%);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-top: 80px;
 }
 
 .card {

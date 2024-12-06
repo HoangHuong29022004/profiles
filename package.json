@@ -1,27 +1,38 @@
 {
   "private": true,
   "scripts": {
-    "dev": "mix",
-    "watch": "mix watch",
-    "prod": "mix --production",
-    "serve": "mix watch & browser-sync start --server --files 'assets/css/*.css, assets/js/*.js, *.html'"
+    "dev": "cross-env NODE_ENV=development webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "cross-env NODE_ENV=production webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "serve": "cross-env NODE_ENV=development webpack serve --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.x",
     "browser-sync": "^2.x.x",
     "browser-sync-webpack-plugin": "^2.x.x",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.x",
+    "file-loader": "^6.2.0",
     "laravel-mix": "^6.0.x",
+    "mini-css-extract-plugin": "^2.7.x",
     "postcss": "^8.4.x",
     "sass": "^1.x.x",
-    "sass-loader": "^12.x.x"
+    "sass-loader": "^12.x.x",
+    "style-loader": "^3.3.x",
+    "webpack": "^5.x.x",
+    "webpack-cli": "^4.x.x"
   },
   "dependencies": {
-    "@popperjs/core": "^2.x.x",
-    "bootstrap": "^5.x.x",
-    "jquery": "^3.x.x",
-    "aos": "^2.3.4",
-    "animate.css": "^4.1.1",
     "@fortawesome/fontawesome-free": "^6.x.x",
-    "typed.js": "^2.0.12"
+    "@popperjs/core": "^2.x.x",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.x.x",
+    "gsap": "^3.x.x",
+    "jquery": "^3.x.x",
+    "particles.js": "^2.0.0",
+    "swiper": "^8.x.x",
+    "typed.js": "^2.0.12",
+    "vanilla-tilt": "^1.7.0"
   }
 }

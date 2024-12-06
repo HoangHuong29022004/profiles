@@ -1,127 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phạm Hoàng Hương - Profile</title>
+    <!-- ... các thẻ meta và title giữ nguyên ... -->
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <!-- Header/Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">PHH</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Particles background -->
+    <div id="particles-js" class="particles-container"></div>
 
-    <!-- Hero Section -->
+    <!-- Navbar giữ nguyên... -->
+
+    <!-- Hero Section với hiệu ứng mới -->
     <section class="hero min-vh-100 d-flex align-items-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 animate__animated animate__fadeInDown">Phạm Hoàng Hương</h1>
-                    <p class="lead mb-4 animate__animated animate__fadeInUp">
+                    <h1 class="display-4 gsap-reveal">Phạm Hoàng Hương</h1>
+                    <div class="typed-container gsap-reveal-2">
                         <span id="typed"></span>
-                    </p>
-                    <div class="animate__animated animate__fadeInUp animate__delay-1s">
-                        <a href="#about" class="btn btn-primary me-2">About Me</a>
-                        <a href="#contact" class="btn btn-outline-primary">Contact</a>
+                    </div>
+                    <div class="mt-5 gsap-reveal-3">
+                        <a href="#about" class="btn btn-glow me-2">About Me</a>
+                        <a href="#contact" class="btn btn-outline-glow">Contact</a>
                     </div>
                 </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <p>Scroll Down</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section với card hover effect -->
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
+            <h2 class="text-center mb-5 section-title" data-aos="fade-up">About Me</h2>
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <img src="assets/images/profile.jpg" alt="Profile" class="img-fluid rounded">
+                    <div class="profile-card" data-tilt data-tilt-max="10">
+                        <img src="assets/images/profile.jpg" alt="Profile" class="img-fluid rounded">
+                        <div class="profile-overlay">
+                            <div class="profile-details">
+                                <h3>Phạm Hoàng Hương</h3>
+                                <p>Backend Developer</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <h3>Backend Web Developer</h3>
-                    <p class="lead">Sinh ngày: 29/02/2004</p>
-                    <p>Hiện đang là sinh viên tại FPT Polytechnic (2022), chuyên ngành lập trình web Backend.</p>
-                    <p>Từng thực tập tại FPT Shop, có kinh nghiệm làm việc với các công nghệ web hiện đại.</p>
-                    <div class="mt-4">
-                        <h4>Sở thích:</h4>
-                        <ul>
-                            <li>Coding</li>
-                            <li>Thể thao</li>
-                            <li>Học công nghệ mới</li>
-                        </ul>
+                    <div class="about-content">
+                        <h3 class="highlight-text">Backend Web Developer</h3>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>29/02/2004</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>FPT Polytechnic (2022)</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Intern at FPT Shop</span>
+                        </div>
+                        <div class="interests mt-4">
+                            <h4>Interests</h4>
+                            <div class="interests-grid">
+                                <div class="interest-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>Coding</span>
+                                </div>
+                                <div class="interest-item">
+                                    <i class="fas fa-running"></i>
+                                    <span>Sports</span>
+                                </div>
+                                <div class="interest-item">
+                                    <i class="fas fa-book-reader"></i>
+                                    <span>Learning</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section với progress bars -->
     <section id="skills" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Skills</h2>
+            <h2 class="text-center mb-5 section-title" data-aos="fade-up">Skills</h2>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title"><i class="fas fa-code"></i> Backend</h4>
-                            <ul class="list-unstyled">
-                                <li><i class="fab fa-php"></i> PHP</li>
-                                <li><i class="fab fa-laravel"></i> Laravel</li>
-                                <li><i class="fab fa-wordpress"></i> WordPress</li>
-                            </ul>
+                <!-- Backend Skills -->
+                <div class="col-md-4" data-aos="flip-left">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4>Backend</h4>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">PHP</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Laravel</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">WordPress</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 80%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title"><i class="fas fa-paint-brush"></i> Frontend</h4>
-                            <ul class="list-unstyled">
-                                <li><i class="fab fa-html5"></i> HTML5</li>
-                                <li><i class="fab fa-css3-alt"></i> CSS3</li>
-                                <li><i class="fab fa-js"></i> JavaScript</li>
-                                <li><i class="fab fa-react"></i> React</li>
-                                <li><i class="fab fa-vuejs"></i> Vue.js</li>
-                            </ul>
+                <!-- Frontend Skills -->
+                <div class="col-md-4" data-aos="flip-up">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Frontend</h4>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">HTML/CSS</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Vue.js</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 70%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title"><i class="fas fa-tools"></i> Tools & Others</h4>
-                            <ul class="list-unstyled">
-                                <li><i class="fab fa-git-alt"></i> Git</li>
-                                <li><i class="fas fa-database"></i> MySQL</li>
-                                <li><i class="fab fa-docker"></i> Docker</li>
-                            </ul>
+                <!-- Other Skills -->
+                <div class="col-md-4" data-aos="flip-right">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Tools & Others</h4>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">Git</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MySQL</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,42 +197,75 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section với Swiper -->
     <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Projects</h2>
-            <!-- Add your projects here -->
+            <h2 class="text-center mb-5 section-title" data-aos="fade-up">Projects</h2>
+            <div class="swiper-container" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Project 1 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/images/project1.jpg" alt="Project 1">
+                            </div>
+                            <div class="project-content">
+                                <h4>Project Name</h4>
+                                <p>Project description goes here...</p>
+                                <div class="project-tech">
+                                    <span class="badge bg-primary">PHP</span>
+                                    <span class="badge bg-secondary">Laravel</span>
+                                    <span class="badge bg-success">MySQL</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary mt-3">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more project slides -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section với hover effects -->
     <section id="contact" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Contact Me</h2>
+            <h2 class="text-center mb-5 section-title" data-aos="fade-up">Contact Me</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="text-center">
-                        <div class="mb-4">
-                            <a href="https://github.com/yourusername" class="me-3 text-dark">
-                                <i class="fab fa-github fa-2x"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/yourusername" class="me-3 text-dark">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
-                            <a href="mailto:your.email@example.com" class="text-dark">
-                                <i class="fas fa-envelope fa-2x"></i>
-                            </a>
-                        </div>
+                    <div class="contact-links" data-aos="zoom-in">
+                        <a href="https://github.com/yourusername" class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:your.email@example.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer py-4 bg-dark text-white">
+    <!-- Footer với gradient -->
+    <footer class="footer py-4">
         <div class="container text-center">
-            <span>&copy; 2024 Phạm Hoàng Hương. All rights reserved.</span>
+            <div class="footer-content">
+                <p>&copy; 2024 Phạm Hoàng Hương</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -173,6 +274,11 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/typed.js/lib/typed.min.js"></script>
     <script src="node_modules/aos/dist/aos.js"></script>
+    <script src="node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+    <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="node_modules/particles.js/particles.js"></script>
+    <script src="node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
-</html> 
+</html>
