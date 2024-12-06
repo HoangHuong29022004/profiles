@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout 🛎️
@@ -31,6 +33,13 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          publish_branch: gh-pages
-          exclude_assets: '.github,node_modules,src,package.json,yarn.lock,webpack.mix.js' 
+          publish_dir: ./
+          enable_jekyll: false
+          keep_files: true
+          exclude_assets: |
+            .github
+            node_modules
+            src
+            package.json
+            yarn.lock
+            webpack.mix.js
