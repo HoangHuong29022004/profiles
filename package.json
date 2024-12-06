@@ -1,0 +1,28 @@
+{
+  "name": "profiles",
+  "version": "1.0.0",
+  "description": "<header>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "mix",
+    "watch": "mix watch",
+    "prod": "mix --production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.x",
+    "laravel-mix": "^6.0.x",
+    "postcss": "^8.4.x",
+    "sass": "^1.x.x",
+    "sass-loader": "^12.x.x",
+    "commander": "^x.x.x"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.x.x",
+    "bootstrap": "^5.x.x",
+    "jquery": "^3.x.x"
+  }
+}
