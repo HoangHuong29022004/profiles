@@ -1,32 +1,16 @@
-const mix = require('laravel-mix');
+let mix = require('laravel-mix');
 
-mix.setPublicPath('assets');
+mix.js('docs/assets/js/common.js', 'docs/assets/js/compress-common.js');
 
-mix.js('src/js/app.js', 'js')
-   .sass('src/scss/app.scss', 'css')
-   .options({
-      processCssUrls: false,
-      postCss: [
-         require('autoprefixer')
-      ]
-   })
-   .sourceMaps()
-   .version();
+mix.sass('docs/assets/sass/common.scss', 'docs/assets/css/common.css');
 
-// Copy các file từ node_modules
-mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'assets/js')
-   .copy('node_modules/jquery/dist/jquery.min.js', 'assets/js')
-   .copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'assets/webfonts');
+mix.sourceMaps();
 
-// Browser Sync
 mix.browserSync({
-    proxy: false,
-    server: {
-        baseDir: './'
-    },
+    server: './docs',
     files: [
-        'assets/css/*.css',
-        'assets/js/*.js',
-        '*.html'
+        'docs/**/*.html',
+        'docs/assets/css/**/*.css',
+        'docs/assets/js/**/*.js'
     ]
-});
+}); 
